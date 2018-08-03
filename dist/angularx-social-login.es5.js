@@ -3825,16 +3825,6 @@ var ZipBufferIterator = /*@__PURE__*/ (function (_super) {
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
-var SocialUser = /** @class */ (function () {
-    function SocialUser() {
-    }
-    return SocialUser;
-}());
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
 var AuthServiceConfig = /** @class */ (function () {
     function AuthServiceConfig(providers) {
         this.providers = new Map();
@@ -3852,10 +3842,6 @@ var AuthService = /** @class */ (function () {
         this._authState = new ReplaySubject(1);
         this._readyState = new BehaviorSubject([]);
         this.providers = config$$1.providers;
-        // dispatch init value for authState
-        var /** @type {?} */ initUser = new SocialUser();
-        initUser.id = '0000';
-        this._authState.next(initUser);
         this.providers.forEach(function (provider, key) {
             provider.initialize().then(function () {
                 var /** @type {?} */ readyProviders = _this._readyState.getValue();
@@ -9283,6 +9269,16 @@ var SocialLoginModule = /** @class */ (function () {
                 },] },
     ];
     return SocialLoginModule;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+var SocialUser = /** @class */ (function () {
+    function SocialUser() {
+    }
+    return SocialUser;
 }());
 
 /**
