@@ -100,6 +100,11 @@ export class AuthService {
   constructor(config: AuthServiceConfig) {
     this.providers = config.providers;
 
+    // dispatch init value for authState
+    let initUser = new SocialUser();
+    initUser.id = '0000';
+    this._authState.next(initUser);
+
     this.providers.forEach((provider: LoginProvider, key: string) => {
       provider.initialize().then(() => {
         let readyProviders = this._readyState.getValue();
