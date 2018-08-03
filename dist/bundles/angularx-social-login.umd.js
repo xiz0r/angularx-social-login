@@ -3852,9 +3852,14 @@
                     readyProviders.push(key);
                     _this._readyState.next(readyProviders);
                     provider.getLoginStatus().then(function (user) {
-                        user.provider = key;
-                        _this._user = user;
-                        _this._authState.next(user);
+                        if (user) {
+                            user.provider = key;
+                            _this._user = user;
+                            _this._authState.next(user);
+                        }
+                        else {
+                            _this._authState.next(null);
+                        }
                     });
                 }).catch(function (err) {
                     // this._authState.next(null);

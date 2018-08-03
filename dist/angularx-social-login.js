@@ -3852,9 +3852,14 @@ class AuthService {
                 readyProviders.push(key);
                 this._readyState.next(readyProviders);
                 provider.getLoginStatus().then((user) => {
-                    user.provider = key;
-                    this._user = user;
-                    this._authState.next(user);
+                    if (user) {
+                        user.provider = key;
+                        this._user = user;
+                        this._authState.next(user);
+                    }
+                    else {
+                        this._authState.next(null);
+                    }
                 });
             }).catch((err) => {
                 // this._authState.next(null);

@@ -107,10 +107,15 @@ export class AuthService {
         this._readyState.next(readyProviders);
 
         provider.getLoginStatus().then((user) => {
-          user.provider = key;
+          if (user) {
+            user.provider = key;
+            this._user = user;
+            this._authState.next(user);
+          }
+          else {
+            this._authState.next(null);
+          }
 
-          this._user = user;
-          this._authState.next(user);
         });
       }).catch((err) => {
         // this._authState.next(null);
