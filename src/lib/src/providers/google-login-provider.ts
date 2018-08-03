@@ -52,6 +52,8 @@ export class GoogleLoginProvider extends BaseLoginProvider {
           user.authToken = token;
           user.idToken = backendToken;
           resolve(user);
+        } else {
+          resolve(null); // if user is signout resolve with null
         }
       });
     });

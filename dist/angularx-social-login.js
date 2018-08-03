@@ -9352,6 +9352,9 @@ class GoogleLoginProvider extends BaseLoginProvider {
                     user.idToken = backendToken;
                     resolve(user);
                 }
+                else {
+                    resolve(null); // if user is signout resolve with null
+                }
             });
         });
     }
