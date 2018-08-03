@@ -3825,6 +3825,13 @@ var ZipBufferIterator = /*@__PURE__*/ (function (_super) {
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
+class SocialUser {
+}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
 class AuthServiceConfig {
     /**
      * @param {?} providers
@@ -3846,6 +3853,10 @@ class AuthService {
         this._authState = new ReplaySubject(1);
         this._readyState = new BehaviorSubject([]);
         this.providers = config$$1.providers;
+        // dispatch init value for authState
+        let /** @type {?} */ initUser = new SocialUser();
+        initUser.id = '0000';
+        this._authState.next(initUser);
         this.providers.forEach((provider, key) => {
             provider.initialize().then(() => {
                 let /** @type {?} */ readyProviders = this._readyState.getValue();
@@ -9247,13 +9258,6 @@ SocialLoginModule.decorators = [
                 ]
             },] },
 ];
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-class SocialUser {
-}
 
 /**
  * @fileoverview added by tsickle
