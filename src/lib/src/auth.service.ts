@@ -151,6 +151,7 @@ export class AuthService {
         let providerObject = this.providers.get(providerId);
         if (providerObject) {
           providerObject.signOut().then(() => {
+            
             resolve();
 
             this._user = null;

@@ -95,7 +95,9 @@ export class GoogleLoginProvider extends BaseLoginProvider {
           if (err) {
             reject(err);
           } else {
-            resolve();
+            this.revokeAuth()
+              .then(()=> resolve())
+              .catch(() => resolve());
           }
         }).catch((err: any) => {
           reject(err);

@@ -1,10 +1,10 @@
 {
-  "name": "angularx-social-login",
-  "version": "1.2.6",
-  "description": "Social login and authentication module for Angular 4 / 5. Supports authentication with Google and Facebook. Can be extended to other providers also.",
+  "name": "angularx-social-login-fork-gb",
+  "version": "1.2.10",
+  "description": "Fork::Social login and authentication module for Angular 4 / 5. Supports authentication with Google and Facebook. Can be extended to other providers also.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/abacritt/angularx-social-login"
+    "url": "https://github.com/xiz0r/angularx-social-login"
   },
   "author": {
     "name": "Jaibatrik Dutta",
@@ -23,10 +23,10 @@
   "bugs": {
     "url": "https://github.com/abacritt/angularx-social-login/issues"
   },
-  "main": "./bundles/angularx-social-login.umd.js",
-  "module": "./angularx-social-login.es5.js",
-  "es2015": "./angularx-social-login.js",
-  "typings": "./angularx-social-login.d.ts",
+  "main": "./bundles/angularx-social-login-fork-gb.umd.js",
+  "module": "./angularx-social-login-fork-gb.es5.js",
+  "es2015": "./angularx-social-login-fork-gb.js",
+  "typings": "./angularx-social-login-fork-gb.d.ts",
   "engines": {
     "node": ">= 6.9.0",
     "npm": ">= 3.0.0"
