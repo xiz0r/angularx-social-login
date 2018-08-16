@@ -15,7 +15,8 @@ export class GoogleLoginProvider extends BaseLoginProvider {
   initialize(): Promise<void> {
     return new Promise((resolve, reject) => {
       this.loadScript(GoogleLoginProvider.PROVIDER_ID,
-        '//apis.google.com/js/platform.js',
+        // '//apis.google.com/js/platform.js',
+        '//apis.google.com/js/api.js',
         () => {
           gapi.load('auth2', () => {
             this.auth2 = gapi.auth2.init({
@@ -95,9 +96,7 @@ export class GoogleLoginProvider extends BaseLoginProvider {
           if (err) {
             reject(err);
           } else {
-            this.revokeAuth()
-              .then(()=> resolve())
-              .catch(() => resolve());
+            resolve();
           }
         }).catch((err: any) => {
           reject(err);
